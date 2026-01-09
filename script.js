@@ -204,19 +204,27 @@ function initFormValidation() {
             return;
         }
         
-        // Simulate form submission
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
         
         submitBtn.innerHTML = '<span>Envoi en cours...</span>';
         submitBtn.disabled = true;
         
+        // Envoi via mailto vers crugerstark@gmail.com
+        const subject = encodeURIComponent(`Message depuis le portfolio - ${name}`);
+        const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+        const mailtoLink = `mailto:crugerstark@gmail.com?subject=${subject}&body=${body}`;
+        
+        // Ouvrir le client email
+        window.location.href = mailtoLink;
+        
+        // Réinitialiser le formulaire après un court délai
         setTimeout(() => {
-            showNotification('Message envoyé avec succès !', 'success');
+            showNotification('Message préparé dans votre client email !', 'success');
             form.reset();
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
-        }, 1500);
+        }, 500);
     });
 }
 
