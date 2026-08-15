@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initScrollAnimations();
     initFormValidation();
+    initHeroTools();
 });
 
 // ===================================
@@ -305,6 +306,30 @@ function showNotification(message, type) {
         notification.style.animation = 'slideInRight 0.4s ease reverse';
         setTimeout(() => notification.remove(), 400);
     }, 5000);
+}
+
+// ===================================
+// Hero tool icons
+// ===================================
+function initHeroTools() {
+    const tools = document.querySelector('.hero-tools');
+    const hero = document.querySelector('.hero');
+    if (!tools || !hero) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const icons = tools.querySelectorAll('.tool-icon');
+
+    hero.addEventListener('mousemove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        icons.forEach((icon, i) => {
+            const depth = ((i % 4) + 1) * 10;
+            icon.style.setProperty('--tx', (x * depth).toFixed(1) + 'px');
+            icon.style.setProperty('--ty', (y * depth).toFixed(1) + 'px');
+        });
+    });
 }
 
 // ===================================
