@@ -17,9 +17,7 @@
 
     <!-- Loader -->
     <div class="loader">
-        <div class="loader-text">
-            <span>C</span><span>H</span><span>A</span><span>R</span><span>G</span><span>E</span><span>M</span><span>E</span><span>N</span><span>T</span>
-        </div>
+        <div class="loader-text" data-i18n="loader" data-i18n-split="true">CHARGEMENT</div>
     </div>
 
     <!-- Navigation -->
@@ -28,21 +26,27 @@
             <a href="#">D.OTHNIEL<span>.</span></a>
         </div>
         <div class="nav-menu">
-            <a href="#work" class="nav-link">Projets</a>
-            <a href="#about" class="nav-link">À propos</a>
-            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#work" class="nav-link" data-i18n="nav.work">Projets</a>
+            <a href="#about" class="nav-link" data-i18n="nav.about">À propos</a>
+            <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
         </div>
-        <button class="nav-toggle" aria-label="Menu">
-            <span></span>
-            <span></span>
-        </button>
+        <div class="nav-right">
+            <div class="lang-switch" role="group" aria-label="Language">
+                <button type="button" class="lang-btn is-active" data-lang="fr">FR</button>
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <button class="nav-toggle" aria-label="Menu" data-i18n-aria="nav.menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </nav>
 
     <!-- Mobile Menu -->
     <div class="mobile-menu">
-        <a href="#work" class="mobile-link">Projets</a>
-        <a href="#about" class="mobile-link">À propos</a>
-        <a href="#contact" class="mobile-link">Contact</a>
+        <a href="#work" class="mobile-link" data-i18n="nav.work">Projets</a>
+        <a href="#about" class="mobile-link" data-i18n="nav.about">À propos</a>
+        <a href="#contact" class="mobile-link" data-i18n="nav.contact">Contact</a>
     </div>
 
     <!-- Hero Section -->
@@ -54,25 +58,25 @@
         </div>
         <div class="hero-stage">
             <div class="hero-content">
-                <div class="hero-tag">Développeur web et mobile</div>
+                <div class="hero-tag" data-i18n="hero.tag">Développeur web et mobile</div>
                 <h1 class="hero-title">
-                    <span class="title-line">Créateur</span>
-                    <span class="title-line">d'expériences</span>
-                    <span class="title-line highlight">digitales<span class="accent">.</span></span>
+                    <span class="title-line" data-i18n="hero.line1">Créateur</span>
+                    <span class="title-line" data-i18n="hero.line2">d'expériences</span>
+                    <span class="title-line highlight"><span data-i18n="hero.line3">digitales</span><span class="accent">.</span></span>
                 </h1>
-                <p class="hero-description">
+                <p class="hero-description" data-i18n="hero.desc">
                     Je conçois des sites web et des apps iOS / Android
                     claires, rapides et mémorables. Du premier écran jusqu'au détail,
                     chaque choix sert un vrai usage.
                 </p>
                 <div class="hero-cta">
                     <a href="#work" class="btn btn-primary">
-                        <span>Voir mes projets</span>
+                        <span data-i18n="hero.ctaWork">Voir mes projets</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
-                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                    <a href="#contact" class="btn btn-secondary" data-i18n="hero.ctaContact">Me contacter</a>
                 </div>
             </div>
 
@@ -116,7 +120,7 @@
             </div>
         </div>
         <div class="hero-scroll">
-            <span>Défiler</span>
+            <span data-i18n="hero.scroll">Défiler</span>
             <div class="scroll-line"></div>
         </div>
     </section>
@@ -124,21 +128,21 @@
     <!-- Marquee -->
     <div class="marquee">
         <div class="marquee-content">
-            <span>Design UI/UX</span>
+            <span data-i18n="marquee.design">Design UI/UX</span>
             <span class="marquee-dot">◆</span>
-            <span>Développement Web</span>
+            <span data-i18n="marquee.web">Développement Web</span>
             <span class="marquee-dot">◆</span>
-            <span>Applications mobiles</span>
+            <span data-i18n="marquee.mobile">Applications mobiles</span>
             <span class="marquee-dot">◆</span>
-            <span>iOS et Android</span>
+            <span data-i18n="marquee.os">iOS et Android</span>
             <span class="marquee-dot">◆</span>
-            <span>Design UI/UX</span>
+            <span data-i18n="marquee.design">Design UI/UX</span>
             <span class="marquee-dot">◆</span>
-            <span>Développement Web</span>
+            <span data-i18n="marquee.web">Développement Web</span>
             <span class="marquee-dot">◆</span>
-            <span>Applications mobiles</span>
+            <span data-i18n="marquee.mobile">Applications mobiles</span>
             <span class="marquee-dot">◆</span>
-            <span>iOS et Android</span>
+            <span data-i18n="marquee.os">iOS et Android</span>
             <span class="marquee-dot">◆</span>
         </div>
     </div>
@@ -148,25 +152,25 @@
         <div class="section-wrap">
             <div class="section-header">
                 <span class="section-tag">Portfolio</span>
-                <h2 class="section-title">Projets sélectionnés</h2>
-                <p class="section-intro">Huit réalisations, une idée claire par carte. Cliquez pour ouvrir le site.</p>
+                <h2 class="section-title" data-i18n="work.title">Projets sélectionnés</h2>
+                <p class="section-intro" data-i18n="work.intro">Huit réalisations, une idée claire par carte. Cliquez pour ouvrir le site.</p>
             </div>
             
             <div class="projects-grid">
                 <article class="project-card project-card-large">
                     <a href="https://sitrabcam.com/" target="_blank" rel="noopener noreferrer" class="project-hit">
                         <div class="project-image">
-                            <img src="sitrabcam.png" alt="Sitrabcam, site de farine premium au Cameroun">
+                            <img src="sitrabcam.png" alt="Sitrabcam, site de farine premium au Cameroun" data-i18n-alt="sitrabcam.alt">
                         </div>
                         <div class="project-info">
                             <div class="project-tags">
-                                <span>Industrie</span>
-                                <span>Site vitrine</span>
-                                <span>Catalogue</span>
+                                <span data-i18n="tag.industry">Industrie</span>
+                                <span data-i18n="tag.landing">Site vitrine</span>
+                                <span data-i18n="tag.catalog">Catalogue</span>
                             </div>
                             <h3 class="project-title">Sitrabcam</h3>
-                            <p class="project-description">Site vitrine et catalogue pour un producteur de farine premium au Cameroun.</p>
-                            <span class="project-cta">Voir le site</span>
+                            <p class="project-description" data-i18n="sitrabcam.desc">Site vitrine et catalogue pour un producteur de farine premium au Cameroun.</p>
+                            <span class="project-cta" data-i18n="work.view">Voir le site</span>
                         </div>
                     </a>
                 </article>
@@ -174,17 +178,17 @@
                 <article class="project-card project-card-wide">
                     <a href="https://lidafcca.com/" target="_blank" rel="noopener noreferrer" class="project-hit">
                         <div class="project-image">
-                            <img src="lidafcca.png" alt="LidafCCA, cabinet de conseil à Douala">
+                            <img src="lidafcca.png" alt="LidafCCA, cabinet de conseil à Douala" data-i18n-alt="lidaf.alt">
                         </div>
                         <div class="project-info">
                             <div class="project-tags">
-                                <span>Conseil</span>
-                                <span>Site vitrine</span>
-                                <span>Institutionnel</span>
+                                <span data-i18n="tag.consulting">Conseil</span>
+                                <span data-i18n="tag.landing">Site vitrine</span>
+                                <span data-i18n="tag.institutional">Institutionnel</span>
                             </div>
                             <h3 class="project-title">LidafCCA</h3>
-                            <p class="project-description">Cabinet de conseil à Douala : fiscalité, formations et gestion de projets.</p>
-                            <span class="project-cta">Voir le site</span>
+                            <p class="project-description" data-i18n="lidaf.desc">Cabinet de conseil à Douala : fiscalité, formations et gestion de projets.</p>
+                            <span class="project-cta" data-i18n="work.view">Voir le site</span>
                         </div>
                     </a>
                 </article>
@@ -192,17 +196,17 @@
                 <article class="project-card project-card-wide">
                     <a href="https://bamboucmr.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-hit">
                         <div class="project-image">
-                            <img src="bamboucamer.png" alt="BambouCamer, association et startup bambou au Cameroun">
+                            <img src="bamboucamer.png" alt="BambouCamer, association et startup bambou au Cameroun" data-i18n-alt="bambou.alt">
                         </div>
                         <div class="project-info">
                             <div class="project-tags">
-                                <span>Écologie</span>
-                                <span>Site vitrine</span>
-                                <span>Association</span>
+                                <span data-i18n="tag.ecology">Écologie</span>
+                                <span data-i18n="tag.landing">Site vitrine</span>
+                                <span data-i18n="tag.association">Association</span>
                             </div>
                             <h3 class="project-title">BambouCamer</h3>
-                            <p class="project-description">Association et startup à Dschang : bambou, économie verte et restauration des terres.</p>
-                            <span class="project-cta">Voir le site</span>
+                            <p class="project-description" data-i18n="bambou.desc">Association et startup à Dschang : bambou, économie verte et restauration des terres.</p>
+                            <span class="project-cta" data-i18n="work.view">Voir le site</span>
                         </div>
                     </a>
                 </article>
@@ -210,17 +214,17 @@
                 <article class="project-card project-card-wide">
                     <a href="https://www.aurexlogistics.org/" target="_blank" rel="noopener noreferrer" class="project-hit">
                         <div class="project-image">
-                            <img src="aurex-logistics.png" alt="Aurex Logistics, suivi de fret mondial">
+                            <img src="aurex-logistics.png" alt="Aurex Logistics, suivi de fret mondial" data-i18n-alt="aurex.alt">
                         </div>
                         <div class="project-info">
                             <div class="project-tags">
-                                <span>Logistique</span>
-                                <span>Suivi</span>
+                                <span data-i18n="tag.logistics">Logistique</span>
+                                <span data-i18n="tag.tracking">Suivi</span>
                                 <span>Web app</span>
                             </div>
                             <h3 class="project-title">Aurex Logistics</h3>
-                            <p class="project-description">Suivi de fret mondial : cartes live, timelines, route, air, mer et véhicules.</p>
-                            <span class="project-cta">Voir le site</span>
+                            <p class="project-description" data-i18n="aurex.desc">Suivi de fret mondial : cartes live, timelines, route, air, mer et véhicules.</p>
+                            <span class="project-cta" data-i18n="work.view">Voir le site</span>
                         </div>
                     </a>
                 </article>
@@ -228,17 +232,17 @@
                 <article class="project-card project-card-wide">
                     <a href="https://car4wayless.com/" target="_blank" rel="noopener noreferrer" class="project-hit">
                         <div class="project-image">
-                            <img src="car4wayless.png" alt="Car4WayLess, inventaire de voitures d'occasion">
+                            <img src="car4wayless.png" alt="Car4WayLess, inventaire de voitures d'occasion" data-i18n-alt="car.alt">
                         </div>
                         <div class="project-info">
                             <div class="project-tags">
-                                <span>Auto</span>
-                                <span>Inventaire</span>
+                                <span data-i18n="tag.auto">Auto</span>
+                                <span data-i18n="tag.inventory">Inventaire</span>
                                 <span>Web app</span>
                             </div>
                             <h3 class="project-title">Car4WayLess</h3>
-                            <p class="project-description">Marketplace auto aux USA : voitures d'occasion, filtres et fiches véhicule.</p>
-                            <span class="project-cta">Voir le site</span>
+                            <p class="project-description" data-i18n="car.desc">Marketplace auto aux USA : voitures d'occasion, filtres et fiches véhicule.</p>
+                            <span class="project-cta" data-i18n="work.view">Voir le site</span>
                         </div>
                     </a>
                 </article>
@@ -247,20 +251,20 @@
                     <a href="https://ice-t3ch.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-hit">
                         <div class="project-image">
                             <div class="project-gallery">
-                                <img src="ice-tech-hero.png" alt="ICE_TECH, page d'accueil bijouterie">
-                                <img src="ice-tech-categories.png" alt="ICE_TECH, catégories de bijoux">
-                                <img src="ice-tech-grill.png" alt="ICE_TECH, grills sur mesure">
+                                <img src="ice-tech-hero.png" alt="ICE_TECH, page d'accueil bijouterie" data-i18n-alt="ice.alt1">
+                                <img src="ice-tech-categories.png" alt="ICE_TECH, catégories de bijoux" data-i18n-alt="ice.alt2">
+                                <img src="ice-tech-grill.png" alt="ICE_TECH, grills sur mesure" data-i18n-alt="ice.alt3">
                             </div>
                         </div>
                         <div class="project-info">
                             <div class="project-tags">
-                                <span>Bijoux</span>
-                                <span>Site vitrine</span>
+                                <span data-i18n="tag.jewelry">Bijoux</span>
+                                <span data-i18n="tag.landing">Site vitrine</span>
                                 <span>E-commerce</span>
                             </div>
                             <h3 class="project-title">ICE_TECH</h3>
-                            <p class="project-description">Marque de bijoux iced-out au Cameroun : catalogue, catégories et prise de rendez-vous.</p>
-                            <span class="project-cta">Voir le site</span>
+                            <p class="project-description" data-i18n="ice.desc">Marque de bijoux iced-out au Cameroun : catalogue, catégories et prise de rendez-vous.</p>
+                            <span class="project-cta" data-i18n="work.view">Voir le site</span>
                         </div>
                     </a>
                 </article>
@@ -268,7 +272,7 @@
                 <article class="project-card">
                     <a href="https://gleaming-halva-2a961d.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-hit">
                         <div class="project-image">
-                            <img src="elections.png" alt="RHIT Élections, plateforme de vote étudiant">
+                            <img src="elections.png" alt="RHIT Élections, plateforme de vote étudiant" data-i18n-alt="rhit.alt">
                         </div>
                         <div class="project-info">
                             <div class="project-tags">
@@ -277,8 +281,8 @@
                                 <span>Web app</span>
                             </div>
                             <h3 class="project-title">RHIT Élections</h3>
-                            <p class="project-description">Vote électronique pour les élections universitaires, avec résultats en direct.</p>
-                            <span class="project-cta">Voir le site</span>
+                            <p class="project-description" data-i18n="rhit.desc">Vote électronique pour les élections universitaires, avec résultats en direct.</p>
+                            <span class="project-cta" data-i18n="work.view">Voir le site</span>
                         </div>
                     </a>
                 </article>
@@ -286,7 +290,7 @@
                 <article class="project-card">
                     <a href="https://robertoequitazione.com" target="_blank" rel="noopener noreferrer" class="project-hit">
                         <div class="project-image">
-                            <img src="Screenshot 2025-12-23 182918.png" alt="Roberto Saddles, catalogue de selles">
+                            <img src="Screenshot 2025-12-23 182918.png" alt="Roberto Saddles, catalogue de selles" data-i18n-alt="roberto.alt">
                         </div>
                         <div class="project-info">
                             <div class="project-tags">
@@ -294,8 +298,8 @@
                                 <span>React</span>
                             </div>
                             <h3 class="project-title">Roberto Saddles</h3>
-                            <p class="project-description">Boutique d'équipement équestre : catalogue filtré et parcours d'achat.</p>
-                            <span class="project-cta">Voir le site</span>
+                            <p class="project-description" data-i18n="roberto.desc">Boutique d'équipement équestre : catalogue filtré et parcours d'achat.</p>
+                            <span class="project-cta" data-i18n="work.view">Voir le site</span>
                         </div>
                     </a>
                 </article>
@@ -303,7 +307,7 @@
 
             <div class="projects-cta">
                 <a href="https://github.com/DominiqueOthniel" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-                    <span>Plus sur GitHub</span>
+                    <span data-i18n="work.github">Plus sur GitHub</span>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -317,41 +321,41 @@
         <div class="about-container">
             <div class="about-visual">
                 <div class="about-image">
-                    <img src="profil.jpeg" alt="Portrait de Dominique Othniel">
+                    <img src="profil.jpeg" alt="Portrait de Dominique Othniel" data-i18n-alt="about.photo">
                 </div>
                 <div class="about-stats">
                     <div class="stat">
                         <span class="stat-number">2+</span>
-                        <span class="stat-label">Années</span>
+                        <span class="stat-label" data-i18n="about.years">Années</span>
                     </div>
                     <div class="stat">
                         <span class="stat-number">10+</span>
-                        <span class="stat-label">Projets</span>
+                        <span class="stat-label" data-i18n="about.projects">Projets</span>
                     </div>
                     <div class="stat">
                         <span class="stat-number">10+</span>
-                        <span class="stat-label">Clients</span>
+                        <span class="stat-label" data-i18n="about.clients">Clients</span>
                     </div>
                 </div>
             </div>
             <div class="about-content">
-                <span class="section-tag">À propos</span>
-                <h2 class="about-title">
+                <span class="section-tag" data-i18n="about.tag">À propos</span>
+                <h2 class="about-title" data-i18n="about.title">
                     Design et code, au service d'un usage clair.
                 </h2>
-                <p class="about-text">
+                <p class="about-text" data-i18n="about.p1">
                     Je suis Dominique Othniel. Je construis des sites, des apps web
                     et des applications mobiles iOS / Android, où l'esthétique
                     ne cache jamais l'essentiel : un parcours simple, un rendu soigné,
                     une performance solide.
                 </p>
-                <p class="about-text">
+                <p class="about-text" data-i18n="about.p2">
                     On avance ensemble, de l'idée au livrable. Moins de jargon,
                     plus de décisions visibles à l'écran.
                 </p>
                 
                 <div class="skills">
-                    <h4 class="skills-title">Compétences</h4>
+                    <h4 class="skills-title" data-i18n="about.skills">Compétences</h4>
                     <div class="skills-list">
                         <span class="skill-tag">React</span>
                         <span class="skill-tag">React Native</span>
@@ -377,7 +381,7 @@
         <div class="contact-container">
             <div class="contact-header">
                 <span class="section-tag">Contact</span>
-                <h2 class="contact-title">
+                <h2 class="contact-title" data-i18n-html="contact.title">
                     Vous avez un projet ?<br>
                     <span class="highlight">Parlons-en.</span>
                 </h2>
@@ -415,18 +419,18 @@
                 <form class="contact-form">
                     <div class="form-group">
                         <input type="text" id="name" required placeholder=" ">
-                        <label for="name">Votre nom</label>
+                        <label for="name" data-i18n="form.name">Votre nom</label>
                     </div>
                     <div class="form-group">
                         <input type="email" id="email" required placeholder=" ">
-                        <label for="email">Votre email</label>
+                        <label for="email" data-i18n="form.email">Votre email</label>
                     </div>
                     <div class="form-group">
                         <textarea id="message" rows="5" required placeholder=" "></textarea>
-                        <label for="message">Votre message</label>
+                        <label for="message" data-i18n="form.message">Votre message</label>
                     </div>
                     <button type="submit" class="btn btn-primary btn-full">
-                        <span>Envoyer le message</span>
+                        <span data-i18n="form.send">Envoyer le message</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -441,10 +445,10 @@
         <div class="footer-container">
             <div class="footer-left">
                 <span class="footer-logo">D.OTHNIEL<span>.</span></span>
-                <p class="footer-text">Dominique Othniel — Sites web et apps mobiles.</p>
+                <p class="footer-text" data-i18n="footer.tagline">Dominique Othniel — Sites web et apps mobiles.</p>
             </div>
             <div class="footer-right">
-                <p class="footer-copyright">© 2026 Tous droits réservés.</p>
+                <p class="footer-copyright" data-i18n="footer.copy">© 2026 Tous droits réservés.</p>
             </div>
         </div>
     </footer>
