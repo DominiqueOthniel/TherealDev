@@ -197,10 +197,21 @@ img {
 }
 
 .nav-logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-family: var(--font-display);
-    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-size: clamp(1.05rem, 2.4vw, 1.35rem);
     font-weight: 700;
     letter-spacing: -0.03em;
+}
+
+.nav-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    flex-shrink: 0;
 }
 
 .nav-logo span {
@@ -1337,9 +1348,17 @@ img {
 }
 
 .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     font-family: var(--font-display);
     font-size: 1.125rem;
     font-weight: 700;
+}
+
+.footer-logo .nav-mark {
+    width: 32px;
+    height: 32px;
 }
 
 .footer-logo span {
