@@ -21,7 +21,7 @@ function initLoader() {
         setTimeout(() => {
             loader.classList.add('hidden');
             document.body.style.overflow = 'visible';
-        }, 1500);
+        }, 700);
     });
 }
 
@@ -108,12 +108,10 @@ function initNavigation() {
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
         
-        if (currentScroll > 100) {
-            nav.style.background = 'rgba(10, 10, 11, 0.9)';
-            nav.style.backdropFilter = 'blur(20px)';
+        if (currentScroll > 40) {
+            nav.style.borderBottomColor = 'rgba(255, 255, 255, 0.08)';
         } else {
-            nav.style.background = 'linear-gradient(to bottom, var(--bg-primary), transparent)';
-            nav.style.backdropFilter = 'none';
+            nav.style.borderBottomColor = 'transparent';
         }
         
         lastScroll = currentScroll;
@@ -122,9 +120,11 @@ function initNavigation() {
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const href = this.getAttribute('href');
+            if (!href || href === '#') return;
+            const target = document.querySelector(href);
             if (target) {
+                e.preventDefault();
                 target.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
