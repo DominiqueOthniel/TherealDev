@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backoffice | Dominique Othniel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#0a0a0b">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+    <div class="admin-shell" id="admin-login" hidden>
+        <div class="admin-login-panel">
+            <p class="admin-eyebrow">Backoffice</p>
+            <h1 class="admin-login-title">D.OTHNIEL<span>.</span></h1>
+            <p class="admin-login-copy">Connectez-vous pour modifier les images et les liens des projets.</p>
+            <form id="login-form" class="admin-login-form" autocomplete="on">
+                <label class="admin-field">
+                    <span>Mot de passe</span>
+                    <input type="password" id="admin-password" name="password" required autocomplete="current-password">
+                </label>
+                <p class="admin-error" id="login-error" hidden>Mot de passe incorrect.</p>
+                <button type="submit" class="btn btn-primary btn-full">Entrer</button>
+            </form>
+            <a class="admin-back-link" href="index.html">Retour au portfolio</a>
+        </div>
+    </div>
+
+    <div class="admin-app" id="admin-app" hidden>
+        <header class="admin-topbar">
+            <div class="admin-topbar-brand">
+                <img src="favicon.svg" alt="" class="nav-mark">
+                <div>
+                    <p class="admin-eyebrow">Backoffice</p>
+                    <h1>Projets</h1>
+                </div>
+            </div>
+            <div class="admin-topbar-actions">
+                <a href="index.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Voir le site</a>
+                <button type="button" class="btn btn-outline" id="reset-overrides">Réinitialiser</button>
+                <button type="button" class="btn btn-primary" id="logout-btn">Déconnexion</button>
+            </div>
+        </header>
+
+        <main class="admin-main">
+            <p class="admin-help">
+                Modifiez l’image (fichier local ou chemin / URL) et le lien de chaque projet.
+                Les changements sont enregistrés dans ce navigateur et s’affichent tout de suite sur le portfolio.
+            </p>
+            <div class="admin-status" id="admin-status" role="status" aria-live="polite"></div>
+            <div class="admin-list" id="admin-list"></div>
+        </main>
+    </div>
+
+    <script src="projects-data.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
