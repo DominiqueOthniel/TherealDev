@@ -3,6 +3,7 @@
 // ===================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    renderProjects();
     initI18n();
     initLoader();
     initCursor();
@@ -70,8 +71,8 @@ const I18N = {
         'ice.desc': 'Marque de bijoux iced-out au Cameroun : catalogue, catégories et prise de rendez-vous.',
         'rhit.alt': 'RHIT Élections, plateforme de vote étudiant',
         'rhit.desc': 'Vote électronique pour les élections universitaires, avec résultats en direct.',
-        'roberto.alt': 'Roberto Saddles, catalogue de selles',
-        'roberto.desc': "Boutique d'équipement équestre : catalogue filtré et parcours d'achat.",
+        'madison.alt': 'Madison Equestrian, catalogue de selles',
+        'madison.desc': "Boutique d'équipement équestre : catalogue filtré et parcours d'achat.",
         'about.photo': 'Portrait de Dominique Othniel',
         'about.years': 'Années',
         'about.projects': 'Projets',
@@ -154,8 +155,8 @@ const I18N = {
         'ice.desc': 'Iced-out jewelry brand in Cameroon: catalog, categories, and booking.',
         'rhit.alt': 'RHIT Elections, student voting platform',
         'rhit.desc': 'Electronic voting for university elections, with live results.',
-        'roberto.alt': 'Roberto Saddles, saddle catalog',
-        'roberto.desc': 'Equestrian shop: filtered catalog and checkout flow.',
+        'madison.alt': 'Madison Equestrian, saddle catalog',
+        'madison.desc': 'Equestrian shop: filtered catalog and checkout flow.',
         'about.photo': 'Portrait of Dominique Othniel',
         'about.years': 'Years',
         'about.projects': 'Projects',
@@ -236,6 +237,80 @@ function initI18n() {
             applyLang(btn.getAttribute('data-lang'));
         });
     });
+}
+
+// ===================================
+// Projects (data driven + local overrides)
+// ===================================
+function escapeHtml(value) {
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function renderTag(tag) {
+    if (tag.i18n) {
+        return `<span data-i18n="${escapeHtml(tag.i18n)}">${escapeHtml(t(tag.i18n))}</span>`;
+    }
+    return `<span>${escapeHtml(tag.label || '')}</span>`;
+}
+
+function renderProjectImage(project) {
+    if (project.images && project.images.length) {
+        const gallery = project.images.map((img) => {
+            const alt = img.altKey ? t(img.altKey) : (img.alt || project.title);
+            const altAttr = img.altKey
+                ? `data-i18n-alt="${escapeHtml(img.altKey)}"`
+                : '';
+            return `<img src="${escapeHtml(img.src)}" alt="${escapeHtml(alt)}" ${altAttr}>`;
+        }).join('');
+        return `<div class="project-gallery">${gallery}</div>`;
+    }
+
+    const alt = project.altKey ? t(project.altKey) : project.title;
+    const altAttr = project.altKey
+        ? `data-i18n-alt="${escapeHtml(project.altKey)}"`
+        : '';
+    return `<img src="${escapeHtml(project.image)}" alt="${escapeHtml(alt)}" ${altAttr}>`;
+}
+
+function sizeClass(size) {
+    if (size === 'large') return 'project-card-large';
+    if (size === 'wide') return 'project-card-wide';
+    return '';
+}
+
+function renderProjects() {
+    const grid = document.getElementById('projects-grid');
+    if (!grid || typeof window.getMergedProjects !== 'function') return;
+
+    const projects = window.getMergedProjects();
+    grid.innerHTML = projects.map((project) => {
+        const tags = (project.tags || []).map(renderTag).join('');
+        const desc = project.descKey ? t(project.descKey) : (project.description || '');
+        const descAttr = project.descKey
+            ? `data-i18n="${escapeHtml(project.descKey)}"`
+            : '';
+
+        return `
+            <article class="project-card ${sizeClass(project.size)}" data-project-id="${escapeHtml(project.id)}">
+                <a href="${escapeHtml(project.href)}" target="_blank" rel="noopener noreferrer" class="project-hit">
+                    <div class="project-image">
+                        ${renderProjectImage(project)}
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">${tags}</div>
+                        <h3 class="project-title">${escapeHtml(project.title)}</h3>
+                        <p class="project-description" ${descAttr}>${escapeHtml(desc)}</p>
+                        <span class="project-cta" data-i18n="work.view">${escapeHtml(t('work.view'))}</span>
+                    </div>
+                </a>
+            </article>
+        `;
+    }).join('');
 }
 
 // ===================================
