@@ -3,6 +3,9 @@
 // ===================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    if (typeof renderProjects === 'function') {
+        renderProjects();
+    }
     initI18n();
     initLoader();
     initCursor();
@@ -50,28 +53,7 @@ const I18N = {
         'tag.fintech': 'Fintech',
         'tag.dashboard': 'Dashboard',
         'tag.craft': 'Artisanat',
-        'prima.alt': 'Prima Rattan Home, mobilier en rotin artisanal',
-        'prima.desc': 'Boutique de meubles en rotin tissé à la main, à Yaoundé.',
-        'semence.alt': 'Sémence, tableau de bord de budget personnel',
-        'semence.desc': 'App de budget personnel : enveloppes, reste à vivre et cycle mensuel.',
-        'sitrabcam.alt': 'Sitrabcam, site de farine premium au Cameroun',
-        'sitrabcam.desc': 'Site vitrine et catalogue pour un producteur de farine premium au Cameroun.',
-        'lidaf.alt': 'LidafCCA, cabinet de conseil à Douala',
-        'lidaf.desc': 'Cabinet de conseil à Douala : fiscalité, formations et gestion de projets.',
-        'bambou.alt': 'BambouCamer, association et startup bambou au Cameroun',
-        'bambou.desc': 'Association et startup à Dschang : bambou, économie verte et restauration des terres.',
-        'aurex.alt': 'Aurex Logistics, suivi de fret mondial',
-        'aurex.desc': 'Suivi de fret mondial : cartes live, timelines, route, air, mer et véhicules.',
-        'car.alt': "Car4WayLess, inventaire de voitures d'occasion",
-        'car.desc': "Marketplace auto aux USA : voitures d'occasion, filtres et fiches véhicule.",
-        'ice.alt1': "ICE_TECH, page d'accueil bijouterie",
-        'ice.alt2': 'ICE_TECH, catégories de bijoux',
-        'ice.alt3': 'ICE_TECH, grills sur mesure',
-        'ice.desc': 'Marque de bijoux iced-out au Cameroun : catalogue, catégories et prise de rendez-vous.',
-        'rhit.alt': 'RHIT Élections, plateforme de vote étudiant',
-        'rhit.desc': 'Vote électronique pour les élections universitaires, avec résultats en direct.',
-        'roberto.alt': 'Roberto Saddles, catalogue de selles',
-        'roberto.desc': "Boutique d'équipement équestre : catalogue filtré et parcours d'achat.",
+        // Textes projets (desc / alt) : voir projects.js
         'about.photo': 'Portrait de Dominique Othniel',
         'about.years': 'Années',
         'about.projects': 'Projets',
@@ -134,28 +116,7 @@ const I18N = {
         'tag.fintech': 'Fintech',
         'tag.dashboard': 'Dashboard',
         'tag.craft': 'Craft',
-        'prima.alt': 'Prima Rattan Home, handmade rattan furniture',
-        'prima.desc': 'Handmade rattan furniture shop in Yaoundé.',
-        'semence.alt': 'Semence, personal budget dashboard',
-        'semence.desc': 'Personal budget app: envelopes, cash on hand, and a monthly cycle.',
-        'sitrabcam.alt': 'Sitrabcam, premium flour website in Cameroon',
-        'sitrabcam.desc': 'Showcase and catalog for a premium flour producer in Cameroon.',
-        'lidaf.alt': 'LidafCCA, consulting firm in Douala',
-        'lidaf.desc': 'Consulting firm in Douala: tax, training, and project management.',
-        'bambou.alt': 'BambouCamer, bamboo association and startup in Cameroon',
-        'bambou.desc': 'Association and startup in Dschang: bamboo, green economy, and land restoration.',
-        'aurex.alt': 'Aurex Logistics, global freight tracking',
-        'aurex.desc': 'Global freight tracking: live maps, timelines, road, air, sea, and vehicles.',
-        'car.alt': 'Car4WayLess, used car inventory',
-        'car.desc': 'US auto marketplace: used cars, filters, and vehicle listings.',
-        'ice.alt1': 'ICE_TECH jewelry homepage',
-        'ice.alt2': 'ICE_TECH jewelry categories',
-        'ice.alt3': 'ICE_TECH custom grills',
-        'ice.desc': 'Iced-out jewelry brand in Cameroon: catalog, categories, and booking.',
-        'rhit.alt': 'RHIT Elections, student voting platform',
-        'rhit.desc': 'Electronic voting for university elections, with live results.',
-        'roberto.alt': 'Roberto Saddles, saddle catalog',
-        'roberto.desc': 'Equestrian shop: filtered catalog and checkout flow.',
+        // Project copy (desc / alt): see projects.js
         'about.photo': 'Portrait of Dominique Othniel',
         'about.years': 'Years',
         'about.projects': 'Projects',
